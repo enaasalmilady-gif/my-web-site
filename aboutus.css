@@ -1,0 +1,764 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+    color: #f9f9f9;
+    background-color: black;
+}
+
+
+.hero-sec {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -2;
+}
+
+/*black blur*/
+.hero-sec::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: -1;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif; 
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    gap: 20px;
+}
+.hero-content{
+    gap: 30px;
+}
+.script-font {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: lowercase;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 4rem;
+    margin-left: 10px;
+    color: #651111;
+}
+.arabic{
+    font-size: 1.5rem;
+    color: #651111;
+}
+
+
+
+
+/* الشريط الأحمر */
+.rolling {
+    background-color: #631414;
+    color: rgb(156, 150, 150);
+    padding: 20px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    margin-bottom: 90px;
+}
+
+.marquee {
+    display: inline-block;
+    animation: scroll-text 20s linear infinite; 
+}
+
+.marquee span {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+@keyframes scroll-text {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* تنسيق الكروت  */
+.main-content {
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+
+  
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    gap: 0px;
+    flex-wrap: wrap;
+   
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    
+}
+
+.card {
+    
+    height: 400px;
+    perspective: 1000px; 
+    margin: 20px;
+    
+    
+    flex: 1 1 300px;
+    overflow: hidden;
+}
+
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg); 
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-back {
+    background-color: #631414; 
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-back p {
+    margin-bottom: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.name{
+    color: #111111;
+    
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-back a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: 0.3s;
+   
+    
+}
+.social-icons{
+    display: flex;
+    flex-direction: row;
+}
+
+.card-back a:hover {
+    color: #ff0000;
+}
+
+h2{
+    color: #631414;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 40px;
+    text-align: center;
+    
+    font-size: 40px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 0; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.service-card {
+    background: #111111; 
+    padding: 60px 20px;
+    text-align: center;
+    flex: 1;
+    color: white;
+    border: 1px solid #333; 
+    position: relative;
+    overflow: hidden;
+}
+
+/* تنسيق الكارد الوسطي  */
+.center-card {
+    background-image: url(what\ we\ serve\ \(1\).jpg); 
+    background-size: cover;
+    background-position: center;
+    border: none;
+}
+
+
+.center-card .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(40, 0, 0, 0.568), rgba(15, 0, 0, 0.95));
+    z-index: 1;
+}
+
+
+.center-card .card-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.service-card:hover {
+    filter: brightness(1.2);
+    z-index: 5;
+    transition: 0.3s;
+}
+.fa-star , .fa-person,.fa-film{
+    color: #651111;
+
+}
+
+
+
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 50px; 
+}
+
+
+.text-header {
+    text-align: center;
+    color: white;
+}
+
+.text-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-header p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.stat-item i {
+    font-size: 2.5rem;
+    color: #631414; 
+    margin-bottom: 15px;
+    display: block;
+}
+
+.stat-item .number {
+    font-size: 2.8rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin: 0;
+}
+.stats-overlay-sec {
+    position: relative;
+    padding: 100px 0;
+    background-image: url(achievements.jpg); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 100px;
+}
+.stats-overlay-sec .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+    background: linear-gradient(135deg, rgba(40, 0, 0, 0.92) 0%, rgba(10, 0, 0, 0.95) 100%);
+    z-index: 1;
+}
+.text{
+    text-align: center;
+    color: #631414;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+.about-vertical {
+    background: #0a0a0a; 
+    color: white;
+    padding: 80px 20px;
+    text-align: center; 
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.header-area {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.number-bg {
+    font-size: 6rem;
+    font-weight: bold;
+    color: rgba(225, 9, 20, 0.052);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    color: #631414; 
+    position: relative;
+    z-index: 2;
+}
+
+/* تنسيق النصوص */
+.highlight-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+
+.main-description {
+    font-size: 1.1rem;
+    color: #b3b3b3;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* الزر */
+.about-link {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px;
+    border: 1px solid #631414;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.about-link:hover {
+    background: #631414;
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+}
+
+
+/*header*/
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Cairo:wght@700&display=swap');
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+   
+    background: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+    gap: 100px;
+}
+
+/*  تنسيق اللوجو  */
+.logo-box h1 {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    font-family: 'Times New Roman', Times, serif;
+    direction: ltr;
+    white-space: nowrap;
+
+    
+}
+
+
+
+.logo-box i {
+    color: #e50914;
+    margin: 0 2px;
+    font-size: 24px;
+   
+    text-shadow: 0 0 15px rgba(229, 9, 20, 0.8), 0 0 30px rgba(229, 9, 20, 0.4);
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 70px;
+    margin: 0;
+    padding: 0;
+    flex: 2;
+    justify-content: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px; 
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+}
+
+
+.nav-links li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #e50914;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+
+.spacer {
+    flex: 1;
+}
+
+
+@media (max-width: 992px) {
+    
+    .nav-links {
+        gap: 12px !important; 
+        flex: 3 !important;   
+    }
+
+   
+    .nav-links li a {
+        font-size: 13px !important; 
+        padding: 5px 2px;
+    }
+
+   
+    .nav-container {
+        padding: 0 10px !important;
+        gap: 10px !important;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 8px !important;
+    }
+    .nav-links li a {
+        font-size: 11px !important;
+    }
+}
+
+/*حركات*/
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px); 
+  transition: all 0.8s ease-out; 
+}
+
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.reveal-img {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 1s ease-in-out;
+}
+
+.reveal-img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+/*red ber*/
+
+
+.red-bar {
+    background-color: #8b0000; 
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding: 15px 0;
+    
+   
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+
+.red-bar.active {
+    opacity: 1;
+    transform: scaleX(1); 
+}
+
+
+.red-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.red-bar:hover::after {
+    left: 100%;
+    transition: 0.8s;
+}
+
+
+
+
+
+
+/* --- Base Sidebar (Desktop) with Glass Effect --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: 80px;
+    height: 100vh;
+    
+    /* 1. تغيير لون الخلفية ليكون شفافاً (RGBA) */
+    background-color: rgba(99, 20, 20, 0.264); 
+    
+    /* 2. إضافة تأثير الغبش (Blur) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* لدعم متصفح Safari */
+    
+    /* 3. إضافة حدود خفيفة لتعزيز مظهر الزجاج */
+    border-left: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    transition: all 0.4s ease;
+    z-index: 10000;
+    direction: rtl;
+    
+    /* 4. إضافة ظل خفيف لإعطاء عمق */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Hide text labels on Desktop slim bar */
+.sidebar-nav span {
+    display: none;
+}
+
+/* --- THE ICON HOVER EFFECT --- */
+.sidebar-nav a i {
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.sidebar-nav a:hover i {
+    color: #ffffff; /* Glow Red */
+    transform: scale(1.3);
+    text-shadow: 0 0 15px #ff0000;
+}
+
+/* Hide Mobile Button on Desktop */
+.menu-toggle {
+    display: none;
+}
+
+/* --- MOBILE RESPONSIVE (Drawer Logic) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1100;
+        background: #631414;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 1.5rem;
+        border-radius: 5px;
+    }
+
+    .sidebar {
+        right: -100%; /* Hide drawer off-screen to the right */
+        width: 260px;
+        padding-top: 80px;
+    }
+
+    .sidebar.active {
+        right: 0; /* Slide in */
+    }
+
+    .sidebar-nav a {
+        justify-content: flex-start;
+        padding: 15px 25px;
+        gap: 20px;
+    }
+
+    .sidebar-nav span {
+        display: inline-block; /* Show Arabic text in drawer */
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
+

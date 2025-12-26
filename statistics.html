@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إحصائيات السينما | Movie Stats</title>
+    <link rel="stylesheet" href="statistics.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+
+
+
+    <button class="menu-toggle" id="menuToggle">
+  <i class="fa-solid fa-bars"></i>
+</button>
+
+<aside class="sidebar" id="sidebar">
+  <nav class="sidebar-nav">
+    <a href="home.html"><i class="fa-solid fa-house"></i> <span>الرئيسية</span></a>
+    <a href="login3.html"><i class="fa-solid fa-user"></i> <span>حسابي</span></a>
+    <a href="#"><i class="fa-solid fa-magnifying-glass"></i> <span>بحث</span></a>
+    <a href="library.html"><i class="fa-solid fa-tv"></i> <span>المكتبة</span></a>
+     <a href="statistics.html"><i class="fa-solid fa-chart-line"></i> <span>الاحصائيات</span></a>
+    <a href="aboutus.html"><i class="fa-solid fa-users"></i> <span>عنا</span></a>
+    <a href="setting.html"><i class="fa-solid fa-gears"></i> <span>الإعدادات</span></a>
+  </nav>
+</aside>
+
+    <div class="dashboard-container">
+        
+        <div class="card chart-card">
+            <div class="card-header">
+                <span>نشاط المشاهدة السنوي</span>
+                <span class="highlight-text">84% نمو</span>
+            </div>
+            <canvas id="mainChart"></canvas>
+            <div class="years-labels">
+                <span>2015</span><span>2018</span><span>2021</span><span>2023</span><span>2025</span>
+            </div>
+        </div>
+
+        <div class="card highlight-card">
+            <div class="overlay-text">
+                <h1 class="big-number">70% </h1>
+                <p class="sub-text"> فيلم الشهر: <strong>Avatar</strong></p>
+            </div>
+            <div class="abstract-shape"></div>
+        </div>
+
+        <div class="card stats-grid">
+            <div class="stat-item">
+                <div class="progress-circle p75">
+                    <span>75%</span>
+                </div>
+                <p>أكشن</p>
+            </div>
+            <div class="stat-item">
+                <div class="progress-circle p50">
+                    <span>50%</span>
+                </div>
+                <p>كرتون</p>
+            </div>
+            <div class="stat-item">
+                <div class="progress-circle p20">
+                    <span>20%</span>
+                </div>
+                <p>رعب</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="statistics.js"></script>
+
+    <script src="global.js"></script>
+</body>
+</html>

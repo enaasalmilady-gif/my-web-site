@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المكتبة | Movie Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="library.css">
+</head>
+<body>
+
+
+
+    <div class="logo-box">
+            <h1>AKE Z<i class="fa-regular fa-circle-play"></i>NE</h1>
+        </div>
+
+
+      <button class="menu-toggle" id="menuToggle">
+  <i class="fa-solid fa-bars"></i>
+</button>
+
+<aside class="sidebar" id="sidebar">
+  <nav class="sidebar-nav">
+    <a href="home.html"><i class="fa-solid fa-house"></i> <span>الرئيسية</span></a>
+    <a href="login3.html"><i class="fa-solid fa-user"></i> <span>حسابي</span></a>
+    <a href="#"><i class="fa-solid fa-magnifying-glass"></i> <span>بحث</span></a>
+    <a href="library.html"><i class="fa-solid fa-tv"></i> <span>المكتبة</span></a>
+     <a href="statistics.html"><i class="fa-solid fa-chart-line"></i> <span>الاحصائيات</span></a>
+    <a href="aboutus.html"><i class="fa-solid fa-users"></i> <span>عنا</span></a>
+    <a href="setting.html"><i class="fa-solid fa-gears"></i> <span>الإعدادات</span></a>
+  </nav>
+</aside>
+
+
+
+    <div class="library-wrapper">
+        
+        <header class="search-header">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="movieSearch" placeholder="ابحث عن فيلم...">
+            </div>
+        </header>
+
+        <nav class="category-nav">
+            <a href="#" class="cat-btn active">الكل</a>
+            <a href="horror.html" class="cat-btn">رعب</a>
+            <a href="action.html" class="cat-btn">أكشن</a>
+            <a href="animation.html" class="cat-btn">كرتون</a>
+            
+        </nav>
+
+        <main class="movies-grid">
+            
+            <a href="#" class="movie-card" onclick="goToDetails('The Addams Family','2020','عائلة/اطفال','عائلة غريبة الاطوار تعيش باسلوب مظلم لكن ملئ بالحب والمرح وتواجه محاولة للاحتيال تهدد تماسكها','adams family.jpg','8.4')">
+                <div class="poster-wrapper">
+                    <img src="adams family.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 8.4</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>The Addams Family</h3>
+                    <p>2020 • عائلة</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card" onclick="goToDetails('The Advangers','2020','اكشن/مغامرات','اجتماع مجموعة ابطال خارقين بقيادة نك لايقاف لوكي الذي يهدد الارض بغزو مدمر','advangers.jpg','7.2')">
+                <div class="poster-wrapper">
+                    <img src="advangers.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 7.2</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>The Advangers</h3>
+                    <p>2020 • اكشن</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card" onclick="goToDetails('Aladdin','2024','كرتون/اطفال','شاب طيب فقير يعثر على مصباح سحري يحقق له الامنيات بمساعدة الجني','aladdin.jpg','9.0')">
+                <div class="poster-wrapper">
+                    <img src="aladdin.jpg" alt="">
+                    <div class="hover-overlay">
+                       <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 9.0</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Aladdin</h3>
+                    <p>2024 • أنيميشن</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card" onclick="goToDetails('Alone','2020','رعب/غموض','امرأة تسافر وحدها بعد فقدان زوجها فتتعرض للمطاردة من رجل غامض وخطير حيث تتحول رحلتها الى صراع للبقاء على قيد الحياة','alone.jpg','7.6')">
+                <div class="poster-wrapper">
+                    <img src="alone.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 7.6</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Alone</h3>
+                    <p>2020 • رعب</p>
+                </div>
+            </a>
+
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="anabelle.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 5.8</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Anabelle</h3>
+                    <p>2020 • رعب</p>
+                </div>
+            </a>
+
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="avatar.jpg">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 2.9</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Avatar</h3>
+                    <p>2023 • انيميشن</p>
+                </div>
+            </a>
+
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="bbepx.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 5.6</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Up</h3>
+                    <p>2019 •عائلة</p>
+                </div>
+            </a>
+
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="black demon.jpg" alt="">
+                    <div class="hover-overlay">
+                       <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i>9.1</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>The Black Demon</h3>
+                    <p>2019 • اكشن</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="bloody hand.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 8.8</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Bloody Hand</h3>
+                    <p>2020 • رعب</p>
+                </div>
+            </a>
+
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="boss baby.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 4.9</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>The Boss Baby</h3>
+                    <p>2023 • اطفال</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="brave.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 2.9</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Brave</h3>
+                    <p>2017 • اطفال</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="bright burn.jpg" alt="">
+                    <div class="hover-overlay">
+                       <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 6.5</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Brightburn</h3>
+                    <p>2019 • غموض</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="chucky.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 8.8</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Chucky</h3>
+                    <p>2016 • رعب</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="cloudy meatballs.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 5.2</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>The Cloudy Meatball</h3>
+                    <p>2019 • كوميديا</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="escape room.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 10</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Escape Room</h3>
+                    <p>2019 • رعب</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="expendables.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 9.9</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Expendables</h3>
+                    <p>2024 • حرب</p>
+                </div>
+            </a>
+
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="extraction.jpg" alt="">
+                    <div class="hover-overlay">
+                       <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 8.2</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Extraction</h3>
+                    <p>2023 • حرب</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="fantastic beasts.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i>9.4</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Fantastic Beasts</h3>
+                    <p>2015 • خيالي</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="frozen.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 6.8</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Frozen</h3>
+                    <p>2015 • اطفال</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="fury.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 8.8</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Fury</h3>
+                    <p>2018 • اكشن</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="hotel.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 2.2</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Hotel Transylvania</h3>
+                    <p>2020 • اطفال</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="huset.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 5.9</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Huset</h3>
+                    <p>2022 • رعب</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="insidious.jpg" alt="">
+                    <div class="hover-overlay">
+                       <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 6.2</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Insidious</h3>
+                    <p>2023 • غموض</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="interstellar.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i>7.1</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Interstellar</h3>
+                    <p>2015 • دراما</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="it.jpg" alt="">
+                    <div class="hover-overlay">
+                       <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 6.4</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>IT</h3>
+                    <p>2019 • رعب</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="jessabele.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 8.5</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Jessabelle</h3>
+                    <p>2014 • رعب</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="jumanji.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i>6.2</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Jumanji</h3>
+                    <p>2019 • اكشن</p>
+                </div>
+            </a>
+
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="madagascar.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 6.4</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Madagascar</h3>
+                    <p>2005 • اطفال</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="marco.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 9.1</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Marco</h3>
+                    <p>2024 • رعب</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="maze runner.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 8.8</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>The Maze Runner</h3>
+                    <p>2017 • اكشن</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="memo.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 9.3</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Finding Memo</h3>
+                    <p>2017 • اطفال</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="moana.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 6.2</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Moana</h3>
+                    <p>2022 • اطفال</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="mockingray.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 7.4</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>The Hunger Games</h3>
+                    <p>2020 • مغامرات</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="monster house.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 8.2</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Monster House</h3>
+                    <p>2016 • رعب</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="nun.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 6.6</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>The Nun</h3>
+                    <p>2018 • رعب</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="orphan.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 9.6</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Orphan</h3>
+                    <p>2022 • رعب</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="pinocchio.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 5.5</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Pinocchio</h3>
+                    <p>2001 • اطفال</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="possesion.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 7.4</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>The Possession</h3>
+                    <p>2012 • رعب</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="ratatouille.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 8.3</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Ratatouille</h3>
+                    <p>2017 • اطفال</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="ready or not.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 6.9</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Ready Or Not</h3>
+                    <p>2019 • جريمة</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="saw.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 2.1</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Saw</h3>
+                    <p>2023 • رعب</p>
+                </div>
+            </a>
+
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="scream.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 9.4</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Scream</h3>
+                    <p>2012 • رعب</p>
+                </div>
+            </a>
+
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="tangled.jpg" alt="">
+                    <div class="hover-overlay">
+                       <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 8.5</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Tangled</h3>
+                    <p>2015 • اطفال </p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="smile.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 3.5</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Smile</h3>
+                    <p>2022 • رعب</p>
+                </div>
+            </a>
+
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="taken.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 8.8</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Taken</h3>
+                    <p>2015 • اكشن</p>
+                </div>
+            </a>
+
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="wave.jpg" alt="">
+                    <div class="hover-overlay">
+                       <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 6.8</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>The 5th Wave</h3>
+                    <p>2018 • اكشن</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="venom.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 9.5</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Venom</h3>
+                    <p>2021 • خيالي</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="tsunami.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 7.1</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Tsunami</h3>
+                    <p>2020 • كارثة طبيعية</p>
+                </div>
+            </a>
+
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="toystory.jpg" alt="">
+                    <div class="hover-overlay">
+                       <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 9.3</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Toy Story</h3>
+                    <p>2018 • اطفال</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="thor.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 4.6</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>Thor</h3>
+                    <p>2016 • اكشن</p>
+                </div>
+            </a>
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="theconjuring.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 9</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>The Conjuring</h3>
+                    <p>2013 • رعب</p>
+                </div>
+            </a>
+
+
+            <a href="#" class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="tank.jpg" alt="">
+                    <div class="hover-overlay">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="rating-tag"><i class="fas fa-star"></i> 8.8</div>
+                </div>
+                <div class="movie-meta">
+                    <h3>The Tank</h3>
+                    <p>2023 • رعب</p>
+                </div>
+            </a>
+
+
+
+
+
+            
+
+
+
+
+
+
+            </main>
+    </div>
+
+    <script src="library.js"></script>
+
+
+
+    <script>
+function goToDetails(title, year, genre, desc, image, rating) {
+    const movieData = { title, year, genre, desc, image, rating };
+    localStorage.setItem('selectedMovie', JSON.stringify(movieData));
+    window.location.href = 'library-details.html';
+}
+</script>
+
+<script src="global.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>تفاصيل الفيلم</title>
+    <link rel="stylesheet" href="details-style.css">
+</head>
+
+<body>
+    <div id="main-bg" class="background-blur"></div>
+
+    <div class="container">
+        <div class="poster-box">
+            <img id="movie-img" src="" alt="">
+        </div>
+        <div class="info-box">
+            <h1 id="movie-title"></h1>
+            <div class="meta">
+                <span id="movie-year"></span> |
+                <span id="movie-genre"></span> |
+                <span class="rating" id="movie-rating"></span>
+            </div>
+            <p class="story-title">القصة</p>
+            <p id="movie-desc" class="description"></p>
+            <div class="btns">
+                <button class="play-btn" id="rateBtn">قيّم الان</button>
+                <a href="animation.html" class="back-btn">رجوع</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="ratingSection" class="rating-container">
+        <div class="rating-content">
+            <h2>رأيك يهمنا</h2>
+            <div class="star-rating">
+                <input type="radio" name="stars" id="star-5"><label for="star-5">★</label>
+                <input type="radio" name="stars" id="star-4"><label for="star-4">★</label>
+                <input type="radio" name="stars" id="star-3"><label for="star-3">★</label>
+                <input type="radio" name="stars" id="star-2"><label for="star-2">★</label>
+                <input type="radio" name="stars" id="star-1"><label for="star-1">★</label>
+            </div>
+            <textarea id="commentArea" placeholder="اكتب مراجعتك للفيلم هنا..."></textarea>
+            <button id="submitReview" class="btn-submit">إرسال التقييم</button>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        window.onload = function () {
+            const data = JSON.parse(localStorage.getItem('selectedMovie'));
+            if (data) {
+                document.getElementById('movie-title').innerText = data.title;
+                document.getElementById('movie-year').innerText = data.year;
+                document.getElementById('movie-genre').innerText = data.genre;
+                document.getElementById('movie-desc').innerText = data.desc;
+                document.getElementById('movie-rating').innerText = "⭐ " + data.rating;
+                document.getElementById('movie-img').src = data.image;
+                document.getElementById('main-bg').style.backgroundImage = `url('${data.image}')`;
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const rateBtn = document.getElementById('rateBtn');
+            const ratingSection = document.getElementById('ratingSection');
+            const submitBtn = document.getElementById('submitReview');
+
+            rateBtn.addEventListener('click', function () {
+                // تبديل ظهور القسم
+                ratingSection.classList.toggle('show');
+
+                // تأثير النزول السلس للقسم
+                if (ratingSection.classList.contains('show')) {
+                    ratingSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+
+            submitBtn.addEventListener('click', function () {
+                alert('شكراً لتقييمك!');
+                ratingSection.classList.remove('show');
+                document.getElementById('commentArea').value = '';
+            });
+        });
+
+
+
+    </script>
+</body>
+
+</html>

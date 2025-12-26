@@ -1,0 +1,354 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background:url(pexels-cottonbro-4722577.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba(0,0,0,0.5);
+    background-blend-mode: overlay;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.settings-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color:linear-gradient(to right, rgb(0, 0, 0), #631414);
+}
+
+.settings-card {
+    background: #63141464;
+    width: 100%;
+    max-width: 850px;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+h2 { margin-bottom: 25px; color: white; }
+
+
+.tabs-header {
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+    overflow-x: auto;
+}
+
+.tab-item {
+    padding: 12px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.tab-item.active {
+    background-color: #631414;
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+
+.tab-content {
+    display: none; 
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* صورة الملف الشخصي */
+.profile-upload {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #631414;
+}
+
+.camera-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #631414;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+
+.inputs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.full-width { grid-column: span 2; }
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: white;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: #fdfdfd;
+}
+
+.save-button {
+    background: #631414;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 12px;
+    float: left;
+    margin-top: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.pref-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.custom-select {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 22px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px; width: 16px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider { background-color: #631414; }
+input:checked + .slider:before { transform: translateX(23px); }
+
+
+.placeholder-content {
+    text-align: center;
+    padding: 50px;
+    color: white;
+}
+.placeholder-content i { font-size: 50px; margin-bottom: 15px; }
+
+
+
+
+
+
+/*mode and language changing*/
+
+
+:root {
+    --bg-color:linear-gradient(to right, rgb(0, 0, 0), #631414) ;
+    --card-bg: #63141494;
+    --text-color: #fff;
+    --input-bg: #1f0909e0;
+}
+
+/* الألوان لما يتفعل الوضع الليلي */
+body.dark-theme {
+    --bg-color: #18191a75;
+    --card-bg: rgba(0,0,0,0.548);
+    --text-color: white;
+    --input-bg: #6314149b;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s; 
+}
+
+.settings-card { background: var(--card-bg); }
+.input-group input { 
+    background: var(--input-bg); 
+    color: var(--text-color); 
+    border-color: #444; 
+}
+
+
+
+
+
+
+
+/* --- Base Sidebar (Desktop) with Glass Effect --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: 80px;
+    height: 100vh;
+    
+    /* 1. تغيير لون الخلفية ليكون شفافاً (RGBA) */
+    background-color: rgba(99, 20, 20, 0.264); 
+    
+    /* 2. إضافة تأثير الغبش (Blur) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* لدعم متصفح Safari */
+    
+    /* 3. إضافة حدود خفيفة لتعزيز مظهر الزجاج */
+    border-left: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    transition: all 0.4s ease;
+    z-index: 1000;
+    direction: rtl;
+    
+    /* 4. إضافة ظل خفيف لإعطاء عمق */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Hide text labels on Desktop slim bar */
+.sidebar-nav span {
+    display: none;
+}
+
+/* --- THE ICON HOVER EFFECT --- */
+.sidebar-nav a i {
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.sidebar-nav a:hover i {
+    color: #ffffff; /* Glow Red */
+    transform: scale(1.3);
+    text-shadow: 0 0 15px #ff0000;
+}
+
+/* Hide Mobile Button on Desktop */
+.menu-toggle {
+    display: none;
+}
+
+/* --- MOBILE RESPONSIVE (Drawer Logic) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1100;
+        background: #631414;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 1.5rem;
+        border-radius: 5px;
+    }
+
+    .sidebar {
+        right: -100%; /* Hide drawer off-screen to the right */
+        width: 260px;
+        padding-top: 80px;
+    }
+
+    .sidebar.active {
+        right: 0; /* Slide in */
+    }
+
+    .sidebar-nav a {
+        justify-content: flex-start;
+        padding: 15px 25px;
+        gap: 20px;
+    }
+
+    .sidebar-nav span {
+        display: inline-block; /* Show Arabic text in drawer */
+        font-size: 1.1rem;
+    }
+}
+
+

@@ -1,0 +1,252 @@
+
+body {
+    background-color:var(--bg-main); 
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl; 
+}
+
+
+.category-title {
+    text-align: center;
+    padding: 40px;
+    margin: 40px;
+
+}
+
+.category-title h1 {
+    font-size: 2rem;
+    color: whitesmoke; 
+    margin: 0;
+}
+
+
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.movie-card {
+   
+    width: 200px; 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05); 
+}
+
+
+.poster-container {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; 
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.poster-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+
+.movie-info {
+    padding: 10px 5px;
+}
+
+.movie-info h3 {
+    font-size: 1.1rem;
+    margin: 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    
+}
+
+.movie-info p {
+    font-size: 0.9rem;
+    color: #b3b3b3;
+    margin: 2px 0;
+}
+
+.movie-info span {
+    font-size: 0.8rem;
+    color: whitesmoke;
+}
+
+
+
+
+
+@media (max-width: 576px) {
+    .movie-card {
+        width: 100%;
+        max-width: 300px; 
+    }
+}
+
+
+/*header*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Cairo:wght@700&display=swap');
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+    background: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+    direction: ltr;
+    gap: 100px;
+    
+}
+
+/*  تنسيق اللوجو  */
+.logo-box h1 {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    font-family: 'Times New Roman', Times, serif;
+    direction: ltr;
+    
+    
+    
+}
+
+
+.logo-box i {
+    color: #e50914;
+    margin: 0 2px;
+    font-size: 24px;
+  
+    text-shadow: 0 0 15px rgba(229, 9, 20, 0.8), 0 0 30px rgba(229, 9, 20, 0.4);
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 70px;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px; 
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+}
+
+
+.nav-links li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #e50914;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+
+.spacer {
+    flex: 1;
+}
+
+
+
+    .nav-links li a {
+        font-size: 15px;
+    }
+
+
+
+    /* ملف CSS الخاص بأي صفحة */
+:root {
+    --bg-main:  #631414;   /* لون الخلفية العادي */
+    --text-main: whitesmoke;    /* لون النص العادي */
+}
+
+/* عندما يضاف هذا الكلاس للجسم، تتغير القيم */
+body.dark-theme {
+    --bg-main: black;   /* لون الخلفية الليلي */
+    --text-main: #ffffff; /* لون النص الليلي */
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+
+
+/*البطمة الي لوطا*/
+
+.back-home-btn{
+    position: fixed;      
+    bottom: 20px;         
+    left: 20px;           
+    padding: 10px 20px;
+    background-color: #631414;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 1000;        
+}
+
+
+
+
+

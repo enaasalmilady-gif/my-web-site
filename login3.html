@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>login</title>
+</head>
+<body>
+    <video src="login.mp4" autoplay loop muted class="myvid"></video>
+    <div class="form">
+        <div class="box-login">
+            <h2 class="login-span">Login<span class="span-login"></span></h2>
+
+            <div class="div-class-input">
+                <input type="text" id="username" class="ing">
+                <label for="username"><i class="fa-solid fa-circle-user"></i>Username</label>
+            
+            </div>
+
+            <div class="div-class-input">
+                <input type="password" id="password" class="ing">
+                <label for="password"><i class="fa-solid fa-lock"></i> Password</label>
+            </div>
+
+            <div class="opt">
+                <button id="forgot-pass">forgot password?</button>
+                <div class="opt-label">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Register</label>
+                </div>
+            </div>
+
+            <button class="submit">Login </button>
+            <span class="donthaveacc">Don't have an account? <button id="to-reg">Register</button></span>
+        </div>
+
+        <div class="box-register">
+            <h2 class="register-span"> Register <span class="span-register"></span></h2>
+            
+            <div class="div-class-input">
+                <input type="text" id="reg-email" class="ing">
+                <label for="reg-email"><i class="fa-solid fa-square-envelope"></i> Email</label>
+            </div>
+            
+            <div class="div-class-input">
+                <input type="text" id="reg-username" class="ing">
+                <label for="reg-username"><i class="fa-solid fa-circle-user"></i> Username</label>
+            </div>
+            
+            <div class="div-class-input">
+                <input type="password" id="reg-password" class="ing">
+                <label for="reg-password"><i class="fa-solid fa-lock"></i> Password</label>
+            </div>
+            
+           
+            
+            <button class="submit">Register</button>
+            <span class="youhaveacc">You have an account? <button id="to-log">Login</button></span>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<a href="home.html" class="back-home-btn"><i class="fa-solid fa-arrow-left"></i></a>
+
+
+
+    <script src="script.js"></script>
+
+    
+
+
+</body>
+</html>

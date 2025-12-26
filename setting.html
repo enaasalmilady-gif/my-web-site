@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="setting.css">
+</head>
+<body>
+
+
+
+    <button class="menu-toggle" id="menuToggle">
+  <i class="fa-solid fa-bars"></i>
+</button>
+
+<aside class="sidebar" id="sidebar">
+  <nav class="sidebar-nav">
+    <a href="home.html"><i class="fa-solid fa-house"></i> <span>الرئيسية</span></a>
+    <a href="login3.html"><i class="fa-solid fa-user"></i> <span>حسابي</span></a>
+    <a href="#"><i class="fa-solid fa-magnifying-glass"></i> <span>بحث</span></a>
+    <a href="library.html"><i class="fa-solid fa-tv"></i> <span>المكتبة</span></a>
+     <a href="statistics.html"><i class="fa-solid fa-chart-line"></i> <span>الاحصائيات</span></a>
+    <a href="aboutus.html"><i class="fa-solid fa-users"></i> <span>عنا</span></a>
+    <a href="setting.html"><i class="fa-solid fa-gears"></i> <span>الإعدادات</span></a>
+  </nav>
+</aside>
+
+<div class="settings-page">
+    <div class="settings-card">
+        <h2>Setting-الاعدادات</h2>
+        
+        <div class="tabs-header">
+            <button class="tab-item active" data-target="profile" id="edit">تعديل الملف الشخصي</button>
+            <button class="tab-item" data-target="preferences" id="preference">التفضيلات</button>
+            <button class="tab-item" data-target="security" id="security">الامان</button>
+            <button class="tab-item" data-target="privacy" id="data">خصوصية البيانات</button>
+        </div>
+
+        <div id="profile" class="tab-content active">
+            <form class="settings-form">
+                <div class="profile-upload">
+                    <div class="avatar-wrapper">
+                        <img src="user.jpg" alt="Profile" id="display-img">
+                        <label for="file-input" class="camera-icon">
+                            <i class="fa-solid fa-camera"></i>
+                        </label>
+                        <input id="file-input" type="file" style="display:none;">
+                    </div>
+                </div>
+
+                <div class="inputs-grid">
+                    <div class="input-group">
+                        <label id="firstName">الاسم الاول</label>
+                        <input type="text">
+                    </div>
+                    <div class="input-group">
+                        <label id="lastName">اسم العائلة</label>
+                        <input type="text" >
+                    </div>
+                    <div class="input-group full-width">
+                        <label  id="email">البريد الالكتروني</label>
+                        <input type="email" >
+                    </div>
+                    <div class="input-group full-width">
+                        <label id="phone">رقم الهاتف</label>
+                        <input type="number">
+                    </div>
+                </div>
+                <button type="submit" class="save-button" id="saveBtn">حفظ التغييرات</button>
+            </form>
+        </div>
+
+        <div id="preferences" class="tab-content">
+            <div class="pref-section">
+                <div class="pref-row">
+                    <span>الوضع الليلي (Dark Mode)</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="pref-row">
+                    <span>اللغة (Language)</span>
+                    <select class="custom-select">
+                        <option>العربية</option>
+                        <option>English</option>
+                    </select>
+                </div>
+                <div class="pref-row">
+                    <span >استلام الإشعارات</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="security" class="tab-content">
+            <div class="placeholder-content">
+                <i class="fa-solid fa-shield-halved"></i>
+                <p id="recieve">إعدادات الأمان ستكون متاحة قريباً.</p>
+            </div>
+        </div>
+
+        <div id="privacy" class="tab-content">
+            <div class="placeholder-content">
+                <i class="fa-solid fa-lock"></i>
+                <p id="recieve2">إعدادات خصوصية البيانات ستكون متاحة قريباً.</p>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="script3.js"></script>
+</body>
+</html>

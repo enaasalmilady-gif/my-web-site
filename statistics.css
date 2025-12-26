@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.dashboard-container {
+    width: 80%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* تصميم الكروت العام */
+.card {
+    background: #121212;
+    border: 1px solid #222;
+    border-radius: 20px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #631414;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+}
+
+/* القسم الأول */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.highlight-text {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.years-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+/* القسم الثاني   */
+.highlight-card {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(45deg, #121212, #1a0000);
+}
+
+.big-number {
+    font-size: 5rem;
+    color: #ff0000;
+    text-shadow: 0 0 20px rgba(42, 15, 15, 0.5);
+}
+
+.sub-text {
+    color: #aaa;
+    letter-spacing: 1px;
+}
+
+/* القسم الثالث  */
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.progress-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 5px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    color: #ff0000;
+    font-weight: bold;
+    position: relative;
+}
+
+/* تأثير بسيط للدوائر */
+.p75 {
+    border-top-color: #ff0000;
+    border-right-color: #ff0000;
+    border-left-color: #ff0000;
+}
+
+.p50 {
+    border-top-color: #ff0000;
+    border-right-color: #ff0000;
+}
+
+.p20 {
+    border-top-color: #ff0000;
+}
+
+.stat-item p {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --- Base Sidebar (Desktop) with Glass Effect --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 100vh;
+
+    /* 1. تغيير لون الخلفية ليكون شفافاً (RGBA) */
+    background-color: rgba(99, 20, 20, 0.264);
+
+    /* 2. إضافة تأثير الغبش (Blur) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* لدعم متصفح Safari */
+
+    /* 3. إضافة حدود خفيفة لتعزيز مظهر الزجاج */
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    transition: all 0.4s ease;
+    z-index: 1000;
+    direction: rtl;
+
+    /* 4. إضافة ظل خفيف لإعطاء عمق */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Hide text labels on Desktop slim bar */
+.sidebar-nav span {
+    display: none;
+}
+
+/* --- THE ICON HOVER EFFECT --- */
+.sidebar-nav a i {
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.sidebar-nav a:hover i {
+    color: #ffffff;
+    /* Glow Red */
+    transform: scale(1.3);
+    text-shadow: 0 0 15px #ff0000;
+}
+
+/* Hide Mobile Button on Desktop */
+.menu-toggle {
+    display: none;
+}
+
+/* --- MOBILE RESPONSIVE (Drawer Logic) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1100;
+        background: #631414;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 1.5rem;
+        border-radius: 5px;
+    }
+
+    .sidebar {
+        right: -100%;
+        /* Hide drawer off-screen to the right */
+        width: 260px;
+        padding-top: 80px;
+    }
+
+    .sidebar.active {
+        right: 0;
+        /* Slide in */
+    }
+
+    .sidebar-nav a {
+        justify-content: flex-start;
+        padding: 15px 25px;
+        gap: 20px;
+    }
+
+    .sidebar-nav span {
+        display: inline-block;
+        /* Show Arabic text in drawer */
+        font-size: 1.1rem;
+    }
+
+    .dashboard-container {
+        width: 95%;
+    }
+
+    .stats-grid {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .big-number {
+        font-size: 3rem;
+    }
+}

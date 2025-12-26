@@ -1,0 +1,358 @@
+/* إعدادات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif; /* يفضل استخدام خط عربي جميل */
+}
+
+body {
+    background-color: #080808;
+    color: #ffffff;
+    padding-top: 50px;
+}
+
+.library-wrapper {
+    width: auto;
+    max-width: 1400px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+/* قسم البحث */
+.search-header {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #631414;
+    font-size: 1.2rem;
+}
+
+#movieSearch {
+    width: 100%;
+    padding: 18px 60px 18px 25px;
+    background: #121212;
+    border: 1px solid #222;
+    border-radius: 50px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+#movieSearch:focus {
+    border-color: #631414;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+/* روابط التصنيفات (البطمات) */
+.category-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.cat-btn {
+    text-decoration: none;
+    color: #eee;
+    padding: 10px 30px;
+    background: #121212;
+    border: 2px solid #333;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.4s ease;
+}
+
+.cat-btn:hover, .cat-btn.active {
+    background: #631414;
+    border-color: #631414;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    transform: translateY(-3px);
+}
+
+/* شبكة الأفلام */
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 كروت في الصف */
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+/* الكرت */
+.movie-card {
+    text-decoration: none;
+    color: white;
+    background: #121212;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid #1a1a1a;
+}
+
+.movie-card:hover {
+    transform: scale(1.03);
+    border-color: #631414;
+}
+
+.poster-wrapper {
+    position: relative;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+}
+
+.poster-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hover-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.movie-card:hover .hover-overlay {
+    opacity: 1;
+}
+
+.hover-overlay i {
+    font-size: 3rem;
+    color: #631414;
+}
+
+.rating-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #631414;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.movie-meta {
+    padding: 15px;
+}
+
+.movie-meta h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-meta p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* التجاوب مع الشاشات الصغيرة */
+@media (max-width: 1024px) {
+    .movies-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .movies-grid { grid-template-columns: repeat(2, 1fr); }
+    .library-wrapper { width: 95%; }
+}
+
+
+/* --- Base Sidebar (Desktop) with Glass Effect --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: 80px;
+    height: 100vh;
+    
+    /* 1. تغيير لون الخلفية ليكون شفافاً (RGBA) */
+    background-color: rgba(99, 20, 20, 0.6); 
+    
+    /* 2. إضافة تأثير الغبش (Blur) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* لدعم متصفح Safari */
+    
+    /* 3. إضافة حدود خفيفة لتعزيز مظهر الزجاج */
+    border-left: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    transition: all 0.4s ease;
+    z-index: 1000;
+    direction: rtl;
+    
+    /* 4. إضافة ظل خفيف لإعطاء عمق */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Hide text labels on Desktop slim bar */
+.sidebar-nav span {
+    display: none;
+}
+
+/* --- THE ICON HOVER EFFECT --- */
+.sidebar-nav a i {
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.sidebar-nav a:hover i {
+    color: #ffffff; /* Glow Red */
+    transform: scale(1.3);
+    text-shadow: 0 0 15px #ff0000;
+}
+
+/* Hide Mobile Button on Desktop */
+.menu-toggle {
+    display: none;
+}
+
+/* --- MOBILE RESPONSIVE (Drawer Logic) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1100;
+        background: #631414;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 1.5rem;
+        border-radius: 5px;
+    }
+
+    .sidebar {
+        right: -100%; /* Hide drawer off-screen to the right */
+        width: 260px;
+        padding-top: 80px;
+    }
+
+    .sidebar.active {
+        right: 0; /* Slide in */
+    }
+
+    .sidebar-nav a {
+        justify-content: flex-start;
+        padding: 15px 25px;
+        gap: 20px;
+    }
+
+    .sidebar-nav span {
+        display: inline-block; /* Show Arabic text in drawer */
+        font-size: 1.1rem;
+    }
+}
+
+
+
+/*  تنسيق اللوجو  */
+.logo-box h1 {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    
+    display: flex;
+    align-items: center;
+    flex: 1;
+    font-family: 'Times New Roman', Times, serif;
+    direction: ltr;
+    align-self: flex-start;
+    margin-top: -45px;
+    
+    
+    
+    
+}
+
+
+.logo-box i {
+    color: #e50914;
+    margin: 0 2px;
+    font-size: 24px;
+  
+    text-shadow: 0 0 15px rgba(229, 9, 20, 0.8), 0 0 30px rgba(229, 9, 20, 0.4);
+}
+
+
+
+
+
+:root {
+    --bg-main:  #631414;   /* لون الخلفية العادي */
+    --text-main: whitesmoke;    /* لون النص العادي */
+}
+
+/* عندما يضاف هذا الكلاس للجسم، تتغير القيم */
+body.dark-theme {
+    --bg-main: black;   /* لون الخلفية الليلي */
+    --text-main: #ffffff; /* لون النص الليلي */
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+
+
+/*البطمة الي لوطا*/
+
+.back-home-btn{
+    position: fixed;      
+    bottom: 20px;         
+    left: 20px;           
+    padding: 10px 20px;
+    background-color: #631414;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 1000;        
+}
